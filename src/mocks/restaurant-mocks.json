@@ -1,0 +1,64 @@
+{
+  "topRestaurants": [
+    {
+      "name": "La Parrilla del Gaucho",
+      "address": "123 Calle de la Carne, Buenos Aires",
+      "telephone": "+54 11 1234-5678",
+      "type": "Argentinian"
+    },
+    {
+      "name": "El Asador Criollo",
+      "address": "456 Avenida de la Parrilla, Cordoba",
+      "telephone": "+54 351 9876-5432",
+      "type": "Argentinian"
+    },
+    {
+      "name": "La Marisquería del Mar",
+      "address": "789 Paseo del Pescador, Mar del Plata",
+      "telephone": "+54 223 6789-1234",
+      "type": "Seafood"
+    },
+    {
+      "name": "Casa de la Pizza",
+      "address": "234 Calle de la Pizza, Mendoza",
+      "telephone": "+54 261 3456-7890",
+      "type": "Italian"
+    },
+    {
+      "name": "El Sabor Argentino",
+      "address": "567 Camino de las Carnes, Rosario",
+      "telephone": "+54 341 5678-9012",
+      "type": "Argentinian"
+    },
+    {
+      "name": "Parrillada Criolla",
+      "address": "890 Ruta de la Parrilla, Salta",
+      "telephone": "+54 387 1234-5678",
+      "type": "Argentinian"
+    },
+    {
+      "name": "María's Grill",
+      "address": "345 Paseo del Mariscos, San Juan",
+      "telephone": "+54 264 5678-1234",
+      "type": "Seafood"
+    },
+    {
+      "name": "Carnes y Vinos",
+      "address": "678 Avenida del Bife, Neuquén",
+      "telephone": "+54 299 9876-5432",
+      "type": "Argentinian"
+    },
+    {
+      "name": "Pizzería La Italiana",
+      "address": "101 Plaza de la Pizza, La Plata",
+      "telephone": "+54 221 3456-7890",
+      "type": "Italian"
+    },
+    {
+      "name": "El Rincón del Chef",
+      "address": "543 Calle de la Cocina, Tucumán",
+      "telephone": "+54 381 5678-9012",
+      "type": "International"
+    }
+  ]
+}
