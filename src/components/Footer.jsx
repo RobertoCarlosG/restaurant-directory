@@ -6,11 +6,9 @@ export function Footer ({ rest }) {
             {
                  // JSON.stringify(rest, null, 2)
             }
-            {
-            // <h4> Prueba técnica de React
-            // </h4>
             <h5> Roberto</h5>
-            }
+             Auth es: {rest}
+
         </footer>
   )
 }
