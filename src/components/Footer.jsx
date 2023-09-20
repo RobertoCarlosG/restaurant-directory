@@ -6,8 +6,8 @@ export function Footer ({ rest }) {
             {
                  // JSON.stringify(rest, null, 2)
             }
-            <h5> Roberto</h5>
-             Auth es: {rest}
+            <h5> Datos recibidos</h5>
+             : {rest}
 
         </footer>
   )

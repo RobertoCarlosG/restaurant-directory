@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { AddRestaurant } from './restaurants/components/AddRestaurant'
+import { IS_DEVELOPMENT } from './components/config'
 import { Footer } from './components/Footer'
 import { RestauranItem } from './restaurants/components/RestaurantItem'
 import withResults from './mocks/restaurant-mocks.json'
@@ -39,7 +40,7 @@ function App () {
         </ul>
         <AddRestaurant />
       </main>
-      <Footer rest={auth}/>
+      {IS_DEVELOPMENT && <Footer rest={auth}/>}
     </div>
   )
 }
