@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { AddRestaurant } from './restaurants/components/AddRestaurant'
 import { Footer } from './components/Footer'
-import { RestauranItem } from './restaurants/components/Restaurant'
+import { RestauranItem } from './restaurants/components/RestaurantItem'
 import withResults from './mocks/restaurant-mocks.json'
 import './App.css'
 
