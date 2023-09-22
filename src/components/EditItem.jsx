@@ -1,11 +1,55 @@
 import { Button, Card, Title, TextInput } from '@tremor/react'
+import { toast } from 'sonner'
+import CryptoJS from 'crypto-js'
+import { useState } from 'react'
 
 export function EditItem ({ isRestaurant }) {
-  const CreateRestaurant = () => {
+  const [name, setName] = useState('')
 
+  const [address, setAddress] = useState('')
+
+  const [telephone, setTel] = useState('')
+
+  const [type, setType] = useState('')
+
+  const CreateRestaurant = (event) => {
+    event.preventDefault()
+    const form = event.target
+    const formData = new FormData(form)
+
+    setName(formData.get('name'))
+    setAddress(formData.get('address'))
+    setTel(formData.get('telephone'))
+    setType(formData.get('type'))
+    const newName = name.replace(' ', '%20')
+    const newAddres = address.replace(' ', '%20')
+    const newType = type.replace(' ', '%20')
+    fetch(`/restaurant?Name=${newName}&Address=${newAddres}&Telephone=${telephone}&Type=${newType}`, {
+      method: 'POST'
+    })
+      .then(res => {
+        if (res.Code === 200) toast.success(`Restaurante ${newName} agregado correctamente`)
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+        toast.error(`${err.Message}`)
+      })
   }
-  const CreateNewUser = () => {
+  const CreateNewUser = ({ UserName, Email, Password }) => {
+    const newName = UserName.Replace(' ', '%20')
+    const email = Email.Replace(' ', '%20')
+    const psd = CryptoJS.SHA256(Password).toString(CryptoJS.enc.Hex)
 
+    fetch(`https://localhost:5001/restaurant?Name=${newName}&email=${email}&Password=${psd}`, {
+      method: 'POST'
+    })
+      .then(res => {
+        if (res.Code === 200) toast.success(`Restaurante ${newName} agregado correctamente`)
+      })
+      .catch(err => {
+        toast.error(`${err.Message}`)
+      })
   }
 
   return (
@@ -15,7 +59,7 @@ export function EditItem ({ isRestaurant }) {
           <Card style={{ marginTop: '16px' }}>
             <Title> Agregar Nuevo Restaurante
             </Title>
-            <form className="">
+            <form className="" onSubmit={(CreateRestaurant)}>
               <TextInput
                 name='name'
                 placeholder="Nombre del restaurante"
@@ -37,7 +81,7 @@ export function EditItem ({ isRestaurant }) {
                 required
               />
               <div>
-                <Button type='submit' style={{ marginTop: '16px' }}>
+                <Button type='submit' style={{ marginTop: '16px' }} onClick={() => CreateRestaurant}>
                   Agregar Restaurante
                 </Button>
                 <span>
